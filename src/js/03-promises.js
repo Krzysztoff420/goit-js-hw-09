@@ -1,10 +1,10 @@
-import Notiflix from "notiflix";
+import Notiflix from 'notiflix';
 
-const form = document.querySelector("form");
-const createBtn = document.querySelector("button[type = submit]");
+const form = document.querySelector('form');
+const createBtn = document.querySelector('button[type = submit]');
 createBtn.disabled = false;
 
-form.addEventListener("submit", (event) => {
+form.addEventListener('submit', event => {
   event.preventDefault();
   createBtn.disabled = true;
   const { delay, step, amount } = form.elements;
@@ -23,7 +23,6 @@ form.addEventListener("submit", (event) => {
   }
   const totalDelay =
     Number(delay.value) + (Number(amount.value) - 1) * Number(step.value);
-  console.log(totalDelay);
   setTimeout(() => (createBtn.disabled = false), totalDelay);
 });
 
